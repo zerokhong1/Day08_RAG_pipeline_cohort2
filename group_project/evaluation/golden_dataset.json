@@ -1,17 +1,146 @@
 [
   {
+    "id": "Q01",
     "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc từ 5g đến dưới 20g ma tuý thể rắn khác.",
+    "expected_context": "Bộ luật Hình sự 2015 sửa đổi 2017, Điều 249",
+    "category": "legal",
+    "difficulty": "easy"
   },
   {
+    "id": "Q02",
     "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "expected_answer": "Bốn hình thức: cai nghiện tự nguyện tại gia đình, tại cộng đồng, tại cơ sở cai nghiện; và cai nghiện bắt buộc tại cơ sở cai nghiện.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V",
+    "category": "legal",
+    "difficulty": "medium"
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "id": "Q03",
+    "question": "Danh mục các chất ma tuý thuộc nhóm I theo pháp luật Việt Nam gồm những chất nào?",
+    "expected_answer": "Nhóm I gồm các chất tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis và các chất tương tự.",
+    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q04",
+    "question": "Người nghiện ma tuý từ đủ 18 tuổi trở lên bị đưa vào cơ sở cai nghiện bắt buộc theo điều kiện gì?",
+    "expected_answer": "Người nghiện ma tuý từ đủ 18 tuổi, không tự nguyện cai nghiện hoặc tái nghiện sau khi đã cai, có thể bị áp dụng biện pháp cai nghiện bắt buộc theo quyết định của Toà án nhân dân cấp huyện.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 32, 33",
+    "category": "legal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q05",
+    "question": "Tội vận chuyển trái phép chất ma tuý bị phạt tù tối đa bao nhiêu năm?",
+    "expected_answer": "Tội vận chuyển trái phép chất ma tuý có thể bị phạt tù đến 20 năm, tù chung thân hoặc tử hình đối với trường hợp đặc biệt nghiêm trọng.",
+    "expected_context": "Bộ luật Hình sự 2015 sửa đổi 2017, Điều 250",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q06",
+    "question": "Mức phạt tiền cho người sử dụng trái phép chất ma tuý theo Nghị định 144/2021?",
+    "expected_answer": "Người sử dụng trái phép chất ma tuý bị phạt tiền từ 1.000.000 đến 2.000.000 đồng đối với lần đầu vi phạm hành chính.",
+    "expected_context": "Nghị định 144/2021/NĐ-CP, Điều 23",
+    "category": "legal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q07",
+    "question": "Tội chiếm đoạt chất ma tuý được quy định tại điều nào của Bộ luật Hình sự?",
+    "expected_answer": "Tội chiếm đoạt chất ma tuý được quy định tại Điều 252 Bộ luật Hình sự 2015 sửa đổi 2017.",
+    "expected_context": "Bộ luật Hình sự 2015 sửa đổi 2017, Điều 252",
+    "category": "legal",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q08",
+    "question": "Cơ quan nào có thẩm quyền quyết định đưa người vào cơ sở cai nghiện bắt buộc?",
+    "expected_answer": "Toà án nhân dân cấp huyện nơi người nghiện ma tuý cư trú có thẩm quyền quyết định áp dụng biện pháp cai nghiện bắt buộc.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 33",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q09",
+    "question": "Nghị định 105/2021 hướng dẫn thi hành Luật Phòng chống ma tuý quy định về điều gì?",
+    "expected_answer": "Nghị định 105/2021/NĐ-CP quy định chi tiết về quản lý người sử dụng trái phép chất ma tuý, đăng ký và quản lý người nghiện ma tuý, cũng như trình tự thủ tục cai nghiện bắt buộc.",
+    "expected_context": "Nghị định 105/2021/NĐ-CP",
+    "category": "legal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q10",
+    "question": "Theo pháp luật, ai có trách nhiệm phát hiện và báo cáo người nghiện ma tuý?",
+    "expected_answer": "Gia đình, cá nhân, cơ quan, tổ chức khi phát hiện người nghiện ma tuý có trách nhiệm thông báo cho Ủy ban nhân dân cấp xã nơi người đó cư trú.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 29",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q11",
+    "question": "Ca sĩ Châu Việt Cường bị bắt vì liên quan đến vụ việc gì?",
+    "expected_answer": "Ca sĩ Châu Việt Cường bị bắt giữ liên quan đến vụ án gây án mạng khi đang trong trạng thái sử dụng ma tuý, dẫn đến cái chết của một người phụ nữ.",
+    "expected_context": "Bài báo về Châu Việt Cường",
+    "category": "news",
+    "difficulty": "easy"
+  },
+  {
+    "id": "Q12",
+    "question": "Những nghệ sĩ Việt Nam nào đã bị bắt hoặc xử lý vì liên quan đến ma tuý?",
+    "expected_answer": "Một số nghệ sĩ đã bị xử lý vì ma tuý bao gồm Châu Việt Cường, Toàn Shinoda (thành viên nhóm nhạc), và một số ca sĩ, diễn viên khác bị phát hiện sử dụng chất cấm.",
+    "expected_context": "Nhiều bài báo về nghệ sĩ và ma tuý",
+    "category": "news",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q13",
+    "question": "Hậu quả pháp lý đối với nghệ sĩ sử dụng ma tuý theo pháp luật Việt Nam?",
+    "expected_answer": "Nghệ sĩ sử dụng ma tuý có thể bị xử phạt hành chính, cưỡng chế cai nghiện, và bị thu hồi giấy phép hoạt động nghệ thuật. Nếu phạm tội hình sự liên quan ma tuý sẽ bị truy tố theo Bộ luật Hình sự.",
+    "expected_context": "Luật Phòng chống ma tuý 2021; Nghị định 144/2021",
+    "category": "mixed",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q14",
+    "question": "Ketamine có thuộc danh mục chất ma tuý bị kiểm soát tại Việt Nam không?",
+    "expected_answer": "Ketamine thuộc danh mục chất hướng thần bị kiểm soát theo quy định của pháp luật Việt Nam, được xếp vào danh mục cần quản lý chặt chẽ trong y tế và tuyệt đối cấm sử dụng ngoài mục đích y tế.",
+    "expected_context": "Nghị định về danh mục chất ma tuý và tiền chất",
+    "category": "legal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q15",
+    "question": "Thời hạn cai nghiện bắt buộc tối đa theo Luật Phòng chống ma tuý 2021 là bao lâu?",
+    "expected_answer": "Thời hạn cai nghiện bắt buộc là từ 12 đến 24 tháng. Trong một số trường hợp đặc biệt có thể kéo dài thêm nhưng không quá 36 tháng.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 34",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q16",
+    "question": "Tội trồng cây thuốc phiện bị xử lý thế nào theo Bộ luật Hình sự 2015?",
+    "expected_answer": "Tội trồng cây thuốc phiện hoặc các cây chứa chất ma tuý khác bị phạt tù từ 6 tháng đến 3 năm theo khoản 1 Điều 247, và có thể lên đến 15 năm đối với trường hợp tái phạm hoặc quy mô lớn.",
+    "expected_context": "Bộ luật Hình sự 2015 sửa đổi 2017, Điều 247",
+    "category": "legal",
+    "difficulty": "medium"
+  },
+  {
+    "id": "Q17",
+    "question": "Người dưới 18 tuổi nghiện ma tuý được áp dụng biện pháp xử lý nào?",
+    "expected_answer": "Người chưa thành niên nghiện ma tuý (dưới 18 tuổi) được ưu tiên áp dụng biện pháp cai nghiện tự nguyện tại gia đình hoặc cộng đồng, không bị đưa vào cơ sở cai nghiện bắt buộc như người lớn.",
+    "expected_context": "Luật Phòng chống ma tuý 2021, Điều 28, 29",
+    "category": "legal",
+    "difficulty": "hard"
+  },
+  {
+    "id": "Q18",
+    "question": "Công an có quyền xét nghiệm ma tuý đối với người bị nghi ngờ sử dụng không?",
+    "expected_answer": "Có. Cơ quan công an được quyền lấy mẫu xét nghiệm ma tuý đối với người bị nghi ngờ sử dụng chất ma tuý trong các trường hợp theo quy định của pháp luật về phòng chống ma tuý.",
+    "expected_context": "Luật Phòng chống ma tuý 2021",
+    "category": "legal",
+    "difficulty": "medium"
   }
 ]

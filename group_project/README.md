@@ -171,7 +171,58 @@ run_dashboard()
 ## Kiến Trúc Hệ Thống
 
 ```
-[Vẽ diagram kiến trúc ở đây]
+# KIẾN TRÚC RAG PIPELINE
+
++-------------------------------------------------------------------------+
+|                  GIAI ĐOẠN 1: OFFLINE DATA INGESTION                    |
++-------------------------------------------------------------------------+
+|                                                                         |
+|  [ Tài liệu thô ] (PDF, DOCX, TXT, Web Page, Markdown,...)              |
+|         │                                                               |
+|         ▼                                                               |
+|  [ Document Loader ] (Trích xuất toàn bộ văn bản thô từ file)           |
+|         │                                                               |
+|         ▼                                                               |
+|  [ Text Splitter ] (Cắt nhỏ văn bản thành các Chunk: size 512-1000)      |
+|         │                                                               |
+|         ▼                                                               |
+|  [ Embedding Model ] (Chuyển đổi từng ký tự/Chunk thành Vector số)      |
+|         │                                                               |
+|         ▼                                                               |
+|  [ Vector Database ] (Lưu trữ Vector kèm Metadata vào ChromaDB/FAISS)  |
+|                                                                         |
++-------------------------------------------------------------------------+
+
+===========================================================================
+
++-------------------------------------------------------------------------+
+|                GIAI ĐOẠN 2: ONLINE RETRIEVAL & GENERATION               |
++-------------------------------------------------------------------------+
+|                                                                         |
+|   Người dùng nhập: [ Câu hỏi / Query ]                                   |
+|                          │                                              |
+|                          ▼                                              |
+|                  [ Embedding Model ]                                    |
+|             (Chuyển Câu hỏi thành Vector số)                            |
+|                          │                                              |
+|                          ▼                                              |
+|       🔍 KẾT NỐI VỚI [ Vector Database ]                                |
+|             (Tính toán tương đồng: Cosine Similarity / L2)              |
+|                          │                                              |
+|                          ├──► [ Tìm kiếm Top-K Chunks có liên quan nhất] |
+|                          │                                              |
+|                          ▼                                              |
+|                  [ Prompt Template ]                                    |
+|       (Đóng gói: Prompt hệ thống + Bộ ngữ cảnh Context + Câu hỏi)       |
+|                          │                                              |
+|                          ▼                                              |
+|             🤖 [ Large Language Model ] (LLM)                            |
+|         (Đọc Prompt, tổng hợp thông tin, chống ảo tưởng)                 |
+|                          │                                              |
+|                          ▼                                              |
+|     Kết quả trả về: [ Câu trả lời hoàn chỉnh / Answer ]                 |
+|                                                                         |
++-------------------------------------------------------------------------+
 ```
 
 ---
@@ -180,10 +231,11 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Công Thái | 2A202600949 | Leader/Quản lý Khung xương Pipeline | Hoạt động |
+| Trảo An Huy | 2A202600819 | Quản lý Cơ sở dữ liệu Vector (Vector DB)/ Tối ưu Truy vấn | Hoạt động |
+| Nguyễn Mạnh Đức | 2A202600734 | Đánh giá & Tối ưu hóa RAG (Evaluation & Optimization) | Hoạt động |
+| Nguyễn Đông Anh | 2A202600760 | Kiểm Prompt & Quản lý Mô hình Ngôn ngữ lớn (LLM) | Hoạt động |
+| Lê Hữu Đạt | 2A202600630 | Đóng gói Giao diện (UI) | Hoạt động |
 
 ---
 

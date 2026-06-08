@@ -296,7 +296,7 @@ run_dashboard()
 | Trảo An Huy | 2A202600819 | Quản lý Cơ sở dữ liệu Vector (Vector DB)/ Tối ưu Truy vấn | Hoạt động |
 | Nguyễn Mạnh Đức | 2A202600734 | Đánh giá & Tối ưu hóa RAG (Evaluation & Optimization) | Hoạt động |
 | Nguyễn Đông Anh | 2A202600760 | Kiểm Prompt & Quản lý Mô hình Ngôn ngữ lớn (LLM) | Hoạt động |
-| Lê Quang Đạt | 2A202600630 | Đóng gói Giao diện (UI) | Hoạt động |
+| Lê Hữu Đạt | 2A202600630 | Đóng gói Giao diện (UI) | Hoạt động |
 
 ---
 

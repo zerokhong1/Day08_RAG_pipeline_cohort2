@@ -36,6 +36,7 @@ streamlit>=1.35.0
 # chainlit>=1.0.0        # Alternative for chatbot
 
 # Group project - Evaluation (choose one)
-deepeval>=1.0.0
-# ragas>=0.1.0           # Alternative
+ragas>=0.1.0
+datasets>=2.19.0
+# deepeval>=1.0.0        # Alternative
 # trulens>=1.0.0         # Alternative

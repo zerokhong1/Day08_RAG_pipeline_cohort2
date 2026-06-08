@@ -1,17 +1,82 @@
 [
   {
-    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự?",
-    "expected_answer": "Phạt tù từ 1 đến 5 năm đối với trường hợp tàng trữ từ 1g đến dưới 5g heroin hoặc cocaine, hoặc chất ma tuý khác với khối lượng tương đương.",
-    "expected_context": "Bộ luật Hình sự 2015, Điều 249"
+    "question": "Hình phạt cho tội tàng trữ trái phép chất ma tuý theo Điều 249 Bộ luật Hình sự là gì?",
+    "expected_answer": "Người tàng trữ trái phép chất ma tuý mà không nhằm mục đích mua bán, vận chuyển, sản xuất (ví dụ tàng trữ Heroine, Cocaine, Methamphetamine... từ 0,1 gam đến dưới 5 gam, hoặc nhựa thuốc phiện/nhựa cần sa từ 1 gam đến dưới 500 gam) thì bị phạt tù từ 03 năm đến 05 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 249. Tội tàng trữ trái phép chất ma túy"
   },
   {
-    "question": "Luật Phòng chống ma tuý 2021 quy định những hình thức cai nghiện nào?",
-    "expected_answer": "Cai nghiện tự nguyện tại gia đình, cai nghiện tự nguyện tại cộng đồng, cai nghiện tự nguyện tại cơ sở cai nghiện, và cai nghiện bắt buộc tại cơ sở cai nghiện.",
-    "expected_context": "Luật Phòng chống ma tuý 2021, Chương V"
+    "question": "Luật Phòng, chống ma tuý 2021 quy định những biện pháp cai nghiện nào?",
+    "expected_answer": "Biện pháp cai nghiện ma túy bao gồm cai nghiện ma túy tự nguyện và cai nghiện ma túy bắt buộc. Cai nghiện tự nguyện được thực hiện tại gia đình, cộng đồng hoặc tại cơ sở cai nghiện ma túy; cai nghiện bắt buộc được thực hiện tại cơ sở cai nghiện ma túy công lập.",
+    "expected_context": "Luật Phòng, chống ma túy 2021 (Luật số 73/2021/QH14), Điều 28. Các biện pháp cai nghiện ma túy"
   },
   {
-    "question": "Danh mục các chất ma tuý thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
-    "expected_answer": "Nhóm I gồm các chất ma tuý tuyệt đối cấm sử dụng trong y học và đời sống, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cannabis (cần sa), và các chất tương tự.",
-    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I"
+    "question": "Theo Điều 251 Bộ luật Hình sự, người mua bán trái phép chất ma túy bị xử phạt như thế nào?",
+    "expected_answer": "Người mua bán trái phép chất ma túy thì bị phạt tù từ 03 năm đến 07 năm. Nếu phạm tội có tổ chức, phạm tội từ 02 lần trở lên, đối với 02 người trở lên, lợi dụng chức vụ quyền hạn hoặc lợi dụng danh nghĩa cơ quan, tổ chức thì bị phạt tù từ 07 năm đến 15 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 251. Tội mua bán trái phép chất ma túy"
+  },
+  {
+    "question": "Tội vận chuyển trái phép chất ma túy theo Điều 250 Bộ luật Hình sự bị phạt tù bao nhiêu năm?",
+    "expected_answer": "Người vận chuyển trái phép chất ma túy mà không nhằm mục đích sản xuất, mua bán, tàng trữ (ví dụ vận chuyển Heroine, Cocaine, Methamphetamine... từ 0,1 gam đến dưới 5 gam) thì bị phạt tù từ 03 năm đến 07 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 250. Tội vận chuyển trái phép chất ma túy"
+  },
+  {
+    "question": "Tội tổ chức sử dụng trái phép chất ma túy theo Điều 255 Bộ luật Hình sự có khung hình phạt như thế nào?",
+    "expected_answer": "Người tổ chức sử dụng trái phép chất ma túy dưới bất kỳ hình thức nào thì bị phạt tù từ 03 năm đến 07 năm. Nếu phạm tội từ 02 lần trở lên, đối với 02 người trở lên, đối với người từ đủ 13 đến dưới 18 tuổi, đối với phụ nữ có thai, đối với người đang cai nghiện hoặc gây tổn hại sức khỏe người khác thì bị phạt tù từ 07 năm đến 15 năm.",
+    "expected_context": "Bộ luật Hình sự 2015, Điều 255. Tội tổ chức sử dụng trái phép chất ma túy"
+  },
+  {
+    "question": "Luật Phòng, chống ma túy 2021 nghiêm cấm những hành vi nào liên quan đến ma túy?",
+    "expected_answer": "Luật nghiêm cấm các hành vi như: trồng cây có chứa chất ma túy; sản xuất, tàng trữ, vận chuyển, mua bán, chiếm đoạt trái phép chất ma túy/tiền chất; sử dụng hoặc tổ chức sử dụng trái phép chất ma túy; cưỡng bức, lôi kéo người khác sử dụng ma túy; chống đối xét nghiệm hoặc cai nghiện; kỳ thị người sử dụng/cai nghiện ma túy, và một số hành vi nghiêm cấm khác do luật định.",
+    "expected_context": "Luật Phòng, chống ma túy 2021, Điều 5. Các hành vi bị nghiêm cấm"
+  },
+  {
+    "question": "Theo Luật Phòng, chống ma túy 2021, chất ma túy được định nghĩa như thế nào?",
+    "expected_answer": "Chất ma túy là chất gây nghiện, chất hướng thần được quy định trong danh mục chất ma túy do Chính phủ ban hành. Trong đó chất gây nghiện là chất kích thích hoặc ức chế thần kinh dễ gây nghiện, còn chất hướng thần là chất kích thích, ức chế thần kinh hoặc gây ảo giác, nếu dùng nhiều lần có thể dẫn đến nghiện.",
+    "expected_context": "Luật Phòng, chống ma túy 2021, Điều 2. Giải thích từ ngữ"
+  },
+  {
+    "question": "Danh mục các chất ma túy thuộc nhóm I theo quy định pháp luật Việt Nam gồm những chất nào?",
+    "expected_answer": "Nhóm I gồm các chất ma túy tuyệt đối cấm sử dụng trong y học và đời sống xã hội, bao gồm heroin, cocaine, methamphetamine, MDMA (ecstasy), cần sa (cannabis) và các chất tương tự được quy định trong danh mục do Chính phủ ban hành.",
+    "expected_context": "Nghị định 57/2022/NĐ-CP, Phụ lục I — Danh mục chất ma túy tuyệt đối cấm"
+  },
+  {
+    "question": "Việc cai nghiện ma túy cho người từ đủ 12 tuổi đến dưới 18 tuổi được quy định ra sao?",
+    "expected_answer": "Người từ đủ 12 tuổi đến dưới 18 tuổi nghiện ma túy được áp dụng biện pháp cai nghiện phù hợp với lứa tuổi, có thể cai nghiện tự nguyện tại gia đình, cộng đồng, tại cơ sở cai nghiện hoặc bị đưa vào cơ sở cai nghiện bắt buộc theo quyết định của cơ quan có thẩm quyền, đảm bảo các quyền và lợi ích phù hợp với trẻ chưa thành niên.",
+    "expected_context": "Luật Phòng, chống ma túy 2021, Điều 33. Cai nghiện ma túy cho người từ đủ 12 tuổi đến dưới 18 tuổi"
+  },
+  {
+    "question": "Quy trình cai nghiện ma túy theo Luật Phòng, chống ma túy 2021 gồm những giai đoạn nào?",
+    "expected_answer": "Quy trình cai nghiện ma túy gồm các giai đoạn: tiếp nhận và phân loại người nghiện, sau đó thực hiện các bước điều trị cắt cơn, giải độc, giáo dục, tư vấn tâm lý, phục hồi hành vi, nhân cách và chuẩn bị tái hòa nhập cộng đồng.",
+    "expected_context": "Luật Phòng, chống ma túy 2021, Điều 29. Quy trình cai nghiện ma túy"
+  },
+  {
+    "question": "Ca sĩ Miu Lê bị bắt vì cáo buộc gì và vào thời điểm nào?",
+    "expected_answer": "Ngày 16/5, Cơ quan CSĐT Công an thành phố Hải Phòng đã khởi tố, bắt tạm giam ca sĩ Miu Lê (Lê Ánh Nhật, 35 tuổi) cùng Vũ Khương An về hành vi tổ chức sử dụng trái phép chất ma túy; một người khác bị khởi tố tội không tố giác tội phạm. Vụ án mở rộng điều tra với tổng cộng 7 bị can.",
+    "expected_context": "VnExpress, bài viết 'Ca sĩ Miu Lê bị bắt với cáo buộc tổ chức sử dụng ma túy'"
+  },
+  {
+    "question": "Ca sĩ Chi Dân và người mẫu An Tây bị công an xử lý vì lý do gì?",
+    "expected_answer": "Ca sĩ Chi Dân và người mẫu An Tây bị công an tạm giữ, điều tra vì nghi liên quan đến ma túy. Trong đó An Tây (Nguyễn Thị An) bị truy tố về hai tội tàng trữ trái phép chất ma túy và tổ chức sử dụng trái phép chất ma túy, là một trong 227 bị can của chuyên án VN10; cô khai bắt đầu sử dụng ma túy từ năm 2020.",
+    "expected_context": "VietNamNet, bài viết 'Loạt nghệ sĩ Việt tiêu tan sự nghiệp vì ma túy' và '3 nữ nghệ sĩ Việt tự huỷ danh tiếng vì liên quan đến ma túy'"
+  },
+  {
+    "question": "Diễn viên Lệ Hằng bị khởi tố về tội gì và tang vật thu giữ là bao nhiêu?",
+    "expected_answer": "Ngày 23/4/2023, diễn viên Lệ Hằng bị khởi tố về tội mua bán trái phép chất ma túy. Tang vật thu giữ là gần 0,7g ma túy tổng hợp mà cô khai nhận đã mua với giá 500.000 đồng để bán kiếm lời.",
+    "expected_context": "VietNamNet, bài viết '3 nữ nghệ sĩ Việt tự huỷ danh tiếng vì liên quan đến ma túy'"
+  },
+  {
+    "question": "Ca sĩ Châu Việt Cường đã gây ra vụ việc gì liên quan đến ma túy và bị tuyên án ra sao?",
+    "expected_answer": "Tháng 3/2019, ca sĩ Châu Việt Cường bị Tòa án Nhân dân TP Hà Nội tuyên phạt 13 năm tù về tội giết người. Trong cơn ảo giác do sử dụng ma túy, anh đã nhét tỏi vào miệng một cô gái khiến nạn nhân tử vong do ngạt thở.",
+    "expected_context": "VietNamNet, bài viết 'Ngoài Nguyễn Công Trí, những nghệ sĩ nào từng bị bắt vì ma tuý?'"
+  },
+  {
+    "question": "Diễn viên hài Hiệp Gà từng bị bắt và xử phạt như thế nào vì tàng trữ ma túy?",
+    "expected_answer": "Tháng 4/2007, diễn viên hài Hiệp Gà bị công an phường Phương Liên, Hà Nội bắt quả tang tàng trữ heroin; anh khai đã nghiện ma túy khoảng 4-5 tháng. Ngày 31/7/2007, TAND quận Đống Đa tuyên phạt Hiệp Gà 24 tháng tù giam về tội tàng trữ trái phép chất ma túy.",
+    "expected_context": "VietNamNet, bài viết 'Sao Việt bị bắt, ngồi tù, mất danh tiếng vì chất cấm'"
+  },
+  {
+    "question": "Vụ án ma túy liên quan ca sĩ Long Nhật và Sơn Ngọc Minh tại TPHCM có quy mô như thế nào?",
+    "expected_answer": "Trưa 20/5, ca sĩ Long Nhật và Sơn Ngọc Minh bị bắt trong vụ việc liên quan đến ma túy tại TPHCM. Công an TPHCM đã triệt phá một đường dây tội phạm ma túy quy mô lớn, bắt giữ và xử lý tổng cộng 74 đối tượng, trong đó 71 bị can bị khởi tố, bắt tạm giam về các hành vi mua bán, tàng trữ và tổ chức sử dụng trái phép chất ma túy; 3 trường hợp còn lại bị xử lý hành chính.",
+    "expected_context": "VOV, bài viết 'Chưa đầy 1 tháng, 3 nghệ sĩ Việt bị khởi tố vì liên quan ma túy gây chấn động'"
   }
 ]

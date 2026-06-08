@@ -11,9 +11,23 @@ Yêu cầu:
     4. So sánh A/B ít nhất 2 configs
     5. Export results ra results.md
 """
+import sys
+import types
+
+# Ghi đè hệ thống để đánh lừa Ragas không bị sập khi tìm VertexAI
+if 'langchain_community.chat_models.vertexai' not in sys.modules:
+    dummy_module = types.ModuleType('langchain_community.chat_models.vertexai')
+    dummy_module.ChatVertexAI = None
+    sys.modules['langchain_community.chat_models.vertexai'] = dummy_module
+
 
 import json
+import sys
+from functools import partial
 from pathlib import Path
+
+ROOT_DIR = Path(__file__).resolve().parents[2]
+sys.path.append(str(ROOT_DIR))
 
 GOLDEN_DATASET_PATH = Path(__file__).parent / "golden_dataset.json"
 RESULTS_PATH = Path(__file__).parent / "results.md"
@@ -79,8 +93,6 @@ def evaluate_with_ragas(rag_pipeline, golden_dataset: list[dict]) -> dict:
 
     pip install ragas
     """
-    #TODO: Implement
-    
     from ragas import evaluate
     from ragas.metrics import (
         faithfulness,
@@ -89,23 +101,31 @@ def evaluate_with_ragas(rag_pipeline, golden_dataset: list[dict]) -> dict:
         context_precision,
     )
     from datasets import Dataset
-    
-    eval_data = {"question": [], "answer": [], "contexts": [], "ground_truth": []}
-    
+
+    # Chuẩn bị data
+    eval_data = {
+        "question": [],
+        "answer": [],
+        "contexts": [],
+        "ground_truth": [],
+    }
+
     for item in golden_dataset:
-        result = rag_pipeline.generate_with_citation(item["question"])
+        result = rag_pipeline(item["question"])
         eval_data["question"].append(item["question"])
         eval_data["answer"].append(result["answer"])
         eval_data["contexts"].append([c["content"] for c in result["sources"]])
         eval_data["ground_truth"].append(item["expected_answer"])
-    #
+
     dataset = Dataset.from_dict(eval_data)
+
+    # Chạy evaluation
     result = evaluate(
         dataset,
         metrics=[faithfulness, answer_relevancy, context_recall, context_precision],
     )
-    return result.to_pandas()
-    raise NotImplementedError("Implement evaluate_with_ragas")
+    print(result.to_pandas())
+    return dict(result)
 
 
 # =============================================================================
@@ -157,21 +177,17 @@ def compare_configs(rag_pipeline, golden_dataset: list[dict]):
     - Config B: dense-only (không reranking)
     - Config C: hybrid search + PageIndex fallback
     """
-    # TODO: Implement A/B comparison
-    #
     configs = {
-        "hybrid_rerank": {"use_reranking": True, "alpha": 0.5},
-        "dense_only": {"use_reranking": False, "alpha": 1.0},
+        "hybrid_rerank": {"use_reranking": True},
+        "dense_only": {"use_reranking": False},
     }
-    
+
     results = {}
     for config_name, params in configs.items():
-        # Run eval with this config
-        ...
-        results[config_name] = scores
-    
+        configured_pipeline = partial(rag_pipeline, **params)
+        results[config_name] = evaluate_with_ragas(configured_pipeline, golden_dataset)
+
     return results
-    raise NotImplementedError("Implement compare_configs")
 
 
 # =============================================================================
@@ -180,35 +196,41 @@ def compare_configs(rag_pipeline, golden_dataset: list[dict]):
 
 def export_results(results: dict, comparison: dict):
     """Export evaluation results to results.md"""
-    # TODO: Format and write results
-    #
     content = "# RAG Evaluation Results\n\n"
+
     content += "## Overall Scores\n\n"
     content += "| Metric | Score |\n|--------|-------|\n"
-    ...
+    for metric, score in results.items():
+        content += f"| {metric} | {score:.3f} |\n"
+
     content += "\n## A/B Comparison\n\n"
-    ...
+    metrics = sorted({metric for scores in comparison.values() for metric in scores})
+    content += "| Config | " + " | ".join(metrics) + " |\n"
+    content += "|--------|" + "|".join(["--------"] * len(metrics)) + "|\n"
+    for config_name, scores in comparison.items():
+        row = " | ".join(f"{scores[m]:.3f}" for m in metrics)
+        content += f"| {config_name} | {row} |\n"
+
     content += "\n## Worst Performers\n\n"
-    ...
+    worst = sorted(results.items(), key=lambda kv: kv[1])[:3]
+    for metric, score in worst:
+        content += f"- {metric}: {score:.3f}\n"
+
     content += "\n## Recommendations\n\n"
-    ...
-    
+    for metric, score in worst:
+        content += f"- Improve **{metric}** (currently {score:.3f}): review retrieval/prompting for this metric.\n"
+
     RESULTS_PATH.write_text(content, encoding="utf-8")
-    raise NotImplementedError("Implement export_results")
 
 
 if __name__ == "__main__":
     golden_dataset = load_golden_dataset()
     print(f"Loaded {len(golden_dataset)} test cases")
 
-    # TODO: Import your RAG pipeline
     from src.task10_generation import generate_with_citation
-    #
-    # Chọn 1 framework:
-    # results = evaluate_with_deepeval(pipeline, golden_dataset)
-    #results = evaluate_with_ragas(rag_pipeline, golden_dataset)
-    # results = evaluate_with_trulens(pipeline, golden_dataset)
-    #
-    #comparison = compare_configs(rag_pipeline, golden_dataset)
-    #export_results(results, comparison)
-    #print("⚠ Implement evaluation logic and run again!")
+
+    rag_pipeline = generate_with_citation
+    results = evaluate_with_ragas(rag_pipeline, golden_dataset)
+    comparison = compare_configs(rag_pipeline, golden_dataset)
+    export_results(results, comparison)
+    print(f"Results exported to {RESULTS_PATH}")

@@ -73,7 +73,8 @@ def main() -> None:
     init_session_state()
 
     with st.expander("Yêu cầu môi trường"):
-        st.write("- Tạo file `.env` ở thư mục gốc với `OPENAI_API_KEY`.")
+        st.write("- Cài và chạy [Ollama](https://ollama.com), pull model (vd: `ollama pull llama3.1`).")
+        st.write("- (Tuỳ chọn) Đặt `OLLAMA_BASE_URL` / `OLLAMA_MODEL` trong `.env` nếu khác mặc định.")
         st.write("- Chạy: `streamlit run group_project/chatbot_app.py`")
 
     query = st.text_area("Nhập câu hỏi của bạn", value=st.session_state.chat_input, height=140)
@@ -90,7 +91,8 @@ def main() -> None:
                 retrieval_source = result.get("retrieval_source", "hybrid")
             except Exception as exc:
                 answer = (
-                    "⚠ Không thể gọi LLM: kiểm tra OPENAI_API_KEY hoặc kết nối mạng.\n"
+                    "⚠ Không thể gọi LLM: kiểm tra Ollama đã chạy (`ollama serve`) "
+                    "và model đã được pull chưa.\n"
                     f"Lỗi: {exc}"
                 )
                 sources = []

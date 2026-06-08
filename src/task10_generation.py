@@ -33,6 +33,11 @@ TOP_P = 0.9
 # Chọn 0.3 vì: RAG cần factual, ít sáng tạo
 TEMPERATURE = 0.3
 
+# LLM local qua Ollama (OpenAI-compatible endpoint) — không cần API key
+# Cài Ollama (https://ollama.com) rồi `ollama pull <model>` trước khi chạy.
+OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434/v1")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "llama3.1")
+
 
 # =============================================================================
 # SYSTEM PROMPT
@@ -151,14 +156,15 @@ def generate_with_citation(query: str, top_k: int = TOP_K, use_reranking: bool =
     # Step 4: Build prompt
     user_message = f"Context:\n{context}\n\n---\n\nQuestion: {query}"
 
-    # Step 5: Call LLM (OpenAI — cần OPENAI_API_KEY trong .env, không có sẵn
-    # trong môi trường này; hàm sẽ raise và caller/test xử lý gracefully)
+    # Step 5: Call LLM local qua Ollama (OpenAI-compatible endpoint, không cần
+    # API key; yêu cầu Ollama đang chạy ở OLLAMA_BASE_URL với model OLLAMA_MODEL
+    # đã được pull về — hàm sẽ raise nếu server không chạy/model chưa có)
     from openai import OpenAI
 
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+    client = OpenAI(base_url=OLLAMA_BASE_URL, api_key="ollama")
 
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model=OLLAMA_MODEL,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": user_message},
@@ -193,11 +199,12 @@ if __name__ == "__main__":
             print(f"\nA: {result['answer']}")
             print(f"\n[Sources: {len(result['sources'])} chunks | via {result['retrieval_source']}]")
         except Exception as e:
-            # Không có OPENAI_API_KEY trong môi trường này — vẫn demo được
+            # Ollama chưa chạy hoặc chưa pull model — vẫn demo được
             # phần retrieve → reorder → format_context (không cần LLM).
             chunks = retrieve(q, top_k=TOP_K)
             reordered = reorder_for_llm(chunks)
             context = format_context(reordered)
-            print(f"\n⚠ Bỏ qua bước gọi LLM (thiếu OPENAI_API_KEY): {e}")
+            print(f"\n⚠ Bỏ qua bước gọi LLM (Ollama chưa sẵn sàng — chạy "
+                  f"`ollama serve` và `ollama pull {OLLAMA_MODEL}`): {e}")
             print(f"[Đã retrieve {len(chunks)} chunks, reorder + format context thành công, "
                   f"độ dài context = {len(context)} ký tự]")

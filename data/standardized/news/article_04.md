@@ -1,0 +1,30 @@
+# 3 nữ nghệ sĩ Việt tự huỷ danh tiếng vì liên quan đến ma túy
+
+**Source:** https://vietnamnet.vn/3-nu-nghe-si-viet-tu-huy-danh-tieng-vi-lien-quan-den-ma-tuy-2514737.html
+**Crawled:** 2026-06-08T03:21:23.861177+00:00
+
+---
+
+# 3 nữ nghệ sĩ Việt tự huỷ danh tiếng vì liên quan đến ma túy
+
+Ngày 23/4/2023, Lệ Hằng - diễn viên nổi tiếng với vai Hoài Thát chơ trong phimXin hãy tin embị khởi tố về tội mua bán trái phép chất ma túy, tang vật thu giữ là gần 0,7g ma túy tổng hợp mà nữ diễn viên khai nhận mua với giá 500.000 đồng để bán kiếm lời.
+
+Điều đáng chú ý là Lệ Hằng đã tuyên bố giải nghệ từ năm 2012 và gần như biến mất khỏi showbiz. Sau hơn 1 thập kỷ vắng bóng, vụ việc phơi bày thực tế không ít diễn viên đã rời bỏ nghề mà chưa tìm được hướng đi ổn định, dễ rơi vào môi trường tiêu cực.
+
+Ngày 9/11/2024, công an kiểm tra một căn hộ tại chung cư cao cấp ở TP. Thủ Đức, TPHCM và phát hiện người mẫu, diễn viên Andrea Aybar Carmona - tên Việt là Nguyễn Thị An, nghệ danhAn Tây- cùng nhóm bạn bè đang sử dụng ma túy. Cô bị truy tố về hai tội tàng trữ trái phép chất ma túy và tổ chức sử dụng trái phép chất ma túy, là một trong 227 bị can của chuyên án VN10.
+
+Làm việc với cơ quan điều tra, An Tây khai bắt đầu sử dụng ma túy từ năm 2020, thường liên hệ mua qua mạng lưới quen biết với giá từ 500.000 đồng đến 1 triệu đồng mỗi lần. Không dừng lại ở việc tự sử dụng, cô còn rủ trợ lý và bạn bè cùng tham gia nhiều lần tại chính căn hộ của mình.
+
+An Tây sinh năm 1995, mang quốc tịch Tây Ban Nha nhưng sống tại Việt Nam từ nhỏ. Cô từng là người mẫu được săn đón ở làng thời trang Hà Nội giai đoạn 2012-2014, sau đó chuyển hướng làm TikToker với kênh hơn 4,7 triệu người theo dõi. Tại cơ quan công an, An Tây thừa nhận hành vi phạm tội và gửi lời khuyên đến người trẻ: "Em đã biết lỗi sai của mình và em có một lời khuyên cho các bạn trẻ là không nên thử hay dính dáng đến chất cấm dù chỉ 1 lần".
+
+Ngày 11/5, Công an đặc khu Cát Hải (TP Hải Phòng) nhận được tin báo của quần chúng nhân dân về việc một số đối tượng có hành vi tổ chức sử dụng trái phép chất ma túy trên bãi biển.
+
+Qua kiểm tra, lực lượng chức năng xác định nhóm đối tượng có hành vi sử dụng trái phép chất ma túy gồm: Lê Ánh Nhật (SN 1991, tứcca sĩ Miu Lê, trú tại TP.HCM); Vũ Khương An (SN 1995, trú tại TP.HCM); Trần Đức Phong (SN 1993, Hà Nội) và 3 đối tượng khác.
+
+Qua test nhanh, lực lượng chức năng xác định ca sĩ Miu Lê cùng Phong và An dương tính với ma túy. Hiện, lực lượng chức năng đang tiếp tục xác minh, làm rõ, xử lý theo quy định của pháp luật.
+
+Miu Lê tên thật là Lê Ánh Nhật, sinh năm 1991, từng gây chú ý với các phim:Em là bà nội của anh, Bạn gái tôi là sếp, Anh thầy ngôi saovà góp mặt trong phimĐại tiệc trăng máu 8đang công chiếu ở các rạp. Ngoài đóng phim, cô còn là ca sĩ, nổi tiếng với bản hitGiá như cô ấy chưa xuất hiện, Thầm thương trộm nhớ, Vì mẹ anh bắt chia tay.
+
+Mỹ Nhụy
+
+Ảnh: Tư liệu

@@ -9,10 +9,12 @@ Yêu cầu:
     - Phải tương thích với embedding model và vector store ở Task 4
 """
 
+from .task4_chunking_indexing import get_chroma_collection, get_embedding_model
+
 
 def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     """
-    Tìm kiếm ngữ nghĩa sử dụng vector similarity.
+    Tìm kiếm ngữ nghĩa sử dụng vector similarity (cosine) trên ChromaDB.
 
     Args:
         query: Câu truy vấn
@@ -21,42 +23,38 @@ def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     Returns:
         List of {
             'content': str,      # Nội dung chunk
-            'score': float,      # Cosine similarity score
+            'score': float,      # Cosine similarity score (càng cao càng liên quan)
             'metadata': dict     # source, doc_type, chunk_index
         }
         Sorted by score descending.
     """
-    # TODO: Implement semantic search
-    #
-    # Bước 1: Embed query bằng cùng model ở Task 4
-    # Bước 2: Query vector store (cosine similarity)
-    # Bước 3: Return top_k results
-    #
-    # Ví dụ với Weaviate:
-    # import weaviate
-    # from sentence_transformers import SentenceTransformer
-    #
-    # model = SentenceTransformer("BAAI/bge-m3")
-    # query_embedding = model.encode(query).tolist()
-    #
-    # client = weaviate.connect_to_local()
-    # collection = client.collections.get("DrugLawDocs")
-    #
-    # results = collection.query.near_vector(
-    #     near_vector=query_embedding,
-    #     limit=top_k,
-    #     return_metadata=MetadataQuery(distance=True)
-    # )
-    #
-    # return [
-    #     {
-    #         "content": obj.properties["content"],
-    #         "score": 1 - obj.metadata.distance,  # distance → similarity
-    #         "metadata": {"source": obj.properties["source"], ...}
-    #     }
-    #     for obj in results.objects
-    # ]
-    raise NotImplementedError("Implement semantic_search")
+    model = get_embedding_model()
+    collection = get_chroma_collection()
+
+    if collection.count() == 0:
+        return []
+
+    query_embedding = model.encode(query, normalize_embeddings=True).tolist()
+
+    results = collection.query(
+        query_embeddings=[query_embedding],
+        n_results=min(top_k, collection.count()),
+        include=["documents", "metadatas", "distances"],
+    )
+
+    output = []
+    for content, metadata, distance in zip(
+        results["documents"][0], results["metadatas"][0], results["distances"][0]
+    ):
+        # Chroma trả về cosine distance = 1 - cosine similarity → convert ngược lại
+        output.append({
+            "content": content,
+            "score": 1.0 - distance,
+            "metadata": dict(metadata),
+        })
+
+    output.sort(key=lambda r: r["score"], reverse=True)
+    return output[:top_k]
 
 
 if __name__ == "__main__":

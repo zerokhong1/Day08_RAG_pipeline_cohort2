@@ -11,8 +11,8 @@ Cài đặt:
     pip install crawl4ai
 """
 
-import asyncio
 import json
+import requests
 from datetime import datetime
 from pathlib import Path
 
@@ -26,14 +26,18 @@ def setup_directory():
 
 # TODO: Điền danh sách URL bài báo cần crawl
 ARTICLE_URLS = [
-    # Ví dụ:
-    # "https://vnexpress.net/...",
-    # "https://tuoitre.vn/...",
-    # "https://thanhnien.vn/...",
+    "https://tienphong.vn/tu-ket-qua-xet-nghiem-5-loai-ma-tuy-cua-ngoc-son-va-dong-thai-cua-nhieu-nghe-si-post1845555.tpo",
+    "https://znews.vn/hau-qua-nghiem-trong-khi-nghe-si-viet-lien-tuc-vuong-on-ao-ma-tuy-post1650870.html",
+    "https://tienphong.vn/nhung-ca-si-dien-vien-bi-ma-tuy-tan-pha-post1528839.tpo",
+    "https://vietnamnet.vn/ngoai-nguyen-cong-tri-nhung-nghe-si-nao-tung-bi-bat-vi-ma-tuy-2424971.html",
+    "https://vietnamnet.vn/nam-ca-si-long-nhat-vua-bi-khoi-to-bat-tam-giam-vi-ma-tuy-2517561.html",
+    "https://kenh14.vn/sao-viet-tieu-tan-su-nghiep-vi-lien-quan-den-ma-tuy-215260522111209355.chn",
+    "https://nld.com.vn/ca-si-miu-le-bi-khoi-to-tam-giam-ve-toi-to-chuc-su-dung-trai-phep-chat-ma-tuy-196260516215034895.htm",
+    "https://www.24h.com.vn/giai-tri/chua-day-1-thang-3-nghe-si-viet-bi-khoi-to-vi-lien-quan-ma-tuy-gay-chan-dong-c731a1763370.htm",
 ]
 
 
-async def crawl_article(url: str) -> dict:
+def crawl_article(url: str) -> dict:
     """
     Crawl một bài báo và trả về dict chứa metadata + content.
 
@@ -45,33 +49,32 @@ async def crawl_article(url: str) -> dict:
             "content_markdown": str
         }
     """
-    from crawl4ai import AsyncWebCrawler
-
-    # TODO: Implement crawling logic
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    response = requests.get(url, headers=headers)
+    response.raise_for_status()
+    
+    return {
+        "url": url,
+        "title": "News Article",
+        "date_crawled": datetime.now().isoformat(),
+        "content_markdown": response.text,  # Tạm lưu HTML, Task 3 sẽ convert sau
+    }
 
 
-async def crawl_all():
+def crawl_all():
     """Crawl toàn bộ bài báo trong ARTICLE_URLS."""
     setup_directory()
 
     for i, url in enumerate(ARTICLE_URLS, 1):
         print(f"[{i}/{len(ARTICLE_URLS)}] Crawling: {url}")
-        article = await crawl_article(url)
-
-        # Lưu file JSON
-        filename = f"article_{i:02d}.json"
-        filepath = DATA_DIR / filename
-        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2))
-        print(f"  ✓ Saved: {filepath}")
+        try:
+            article = crawl_article(url)
+            filename = f"article_{i:02d}.json"
+            filepath = DATA_DIR / filename
+            filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"  ✓ Saved: {filepath}")
+        except Exception as e:
+            print(f"  ✗ Lỗi khi crawl {url}: {e}")
 
 
 if __name__ == "__main__":
@@ -79,4 +82,4 @@ if __name__ == "__main__":
         print("⚠ Hãy điền ARTICLE_URLS trước khi chạy!")
         print("Gợi ý: tìm bài báo trên VnExpress, Tuổi Trẻ, Thanh Niên, ...")
     else:
-        asyncio.run(crawl_all())
+        crawl_all()
